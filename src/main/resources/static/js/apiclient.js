@@ -1,15 +1,10 @@
 apiclient= (function(){
-    function getWeatherByCity(city,callback){
-        $.ajax ({
-            dataType: "json",
-            url: "https://parcial-02.herokuapp.com//weather/"+city,
-            success: function(data){
-                callback(data)
-            }
-        });
-    }
-
-    return{
-        getWeatherByCity:getWeatherByCity
+    return {
+        getWeatherByCity: function(city, callback) {
+            var promiseGetAllCases = $.getJSON(`/weather/${ city }`);
+            $.when (promiseGetAllCases).done(function (data) {
+                callback(data);
+            });
+        }
     }
 })();

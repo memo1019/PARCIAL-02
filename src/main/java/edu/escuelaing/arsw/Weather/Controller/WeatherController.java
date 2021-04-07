@@ -1,6 +1,8 @@
 package edu.escuelaing.arsw.Weather.Controller;
 
+import edu.escuelaing.arsw.Weather.Services.HttpConectionServices1;
 import edu.escuelaing.arsw.Weather.Services.WeatherServices1;
+import edu.escuelaing.arsw.Weather.Services.impl.HttpConectionServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,10 @@ import java.util.logging.Logger;
 public class WeatherController {
     @Autowired
     WeatherServices1 weatherServices;
+    @Autowired
+    HttpConectionServices1 weather1Services;
+
+
 
     @RequestMapping(value="{city}", method = RequestMethod.GET)
     public ResponseEntity<?> getWeatherByCity(@PathVariable(name="city") String city) {

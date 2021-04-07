@@ -12,8 +12,8 @@ app = (function (){
         $("#clouds").text("Clouds: "+data.clouds);
         $("#visibility").text("Visibility: "+data.visibility);
         $("#base").text("Base: "+data.base);
-        $("#lat").text("Lat: "+data.Coord.lat);
-        $("#lon").text("Lon: "+data.Coord.lon);
+        $("#lat").text("Lat: "+data.coord.lat);
+        $("#lon").text("Lon: "+data.coord.lon);
         $("#wid").text("Id: "+data.weather.id);
         $("#main").text("Main: "+data.weather.main);
         $("#descrp").text("Description: "+data.weather.description);
