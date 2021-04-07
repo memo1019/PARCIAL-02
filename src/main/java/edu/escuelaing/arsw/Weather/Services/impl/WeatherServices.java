@@ -56,6 +56,7 @@ public class WeatherServices  implements WeatherServices1{
                 int visibility = rta.getInt("visibility");
                 int timezone = rta.getInt("timezone");
                 String name = rta.getString("name");
+
                 stats.add(new Stats(coord, weather, base, main, visibility, wind, clouds, dt, sunrise, timezone, id, name));
             } catch (Exception e) {
             throw new Exception(e.getMessage());
