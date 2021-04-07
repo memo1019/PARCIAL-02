@@ -13,10 +13,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @RestController
+@RequestMapping("/weather")
 public class WeatherController {
     @Autowired
     WeatherServices1 weatherServices;
-    @RequestMapping(value="/weather/{city}", method = RequestMethod.GET)
+    @RequestMapping(value="{city}", method = RequestMethod.GET)
     public ResponseEntity<?> getWeatherByCity(@PathVariable(name="city") String city) {
         try {
             return new ResponseEntity<>(weatherServices.getWeatherByCity(city), HttpStatus.ACCEPTED);

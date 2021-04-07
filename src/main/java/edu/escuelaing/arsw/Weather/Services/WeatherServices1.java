@@ -5,5 +5,5 @@ import edu.escuelaing.arsw.Weather.Model.Stats;
 import java.util.List;
 
 public interface WeatherServices1 {
-    public List<Stats> getWeatherByCity(String city) throws Exception;
+    public Stats getWeatherByCity(String city) throws Exception;
 }

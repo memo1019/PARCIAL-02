@@ -1,6 +1,6 @@
 app = (function (){
 
-    var _module = "js/apiclient.js";
+    var _module = "/js/apiclient.js";
     var map;
 
 
@@ -24,13 +24,13 @@ app = (function (){
         $("#tmpmax").text("Temp max: "+data.main.temp_max);
         $("#press").text("Pressure: "+data.main.pressure);
         $("#humed").text("humidity: "+data.main.humidity);
-        $("#speed").text("Speed: "+data.sys.temp);
-        $("#deg").text("Deg: "+data.sys.id);
+        $("#speed").text("Speed: "+data.sunrise.temp);
+        $("#deg").text("Deg: "+data.sunrise.id);
         $("#type").text("Type: "+data.wind.speed);
         $("#Sunid").text("Id: "+data.wind.deg);
-        $("#country").text("Country: "+data.sys.country);
-        $("#sunrise").text("Sunrise: "+data.sys.sunrise);
-        $("#sunset").text("Sunset: "+data.sys.sunset);
+        $("#country").text("Country: "+data.sunrise.country);
+        $("#sunrise").text("Sunrise: "+data.sunrise.sunrise);
+        $("#sunset").text("Sunset: "+data.sunrise.sunset);
         document.getElementById("infow").style.visibility="visible";
         _initMap(data)
     }

@@ -21,9 +21,10 @@ public class WeatherServices  implements WeatherServices1{
 
     @Autowired
     WeatherCache1 weatherCacheService;
-    private final String cache = "oneCity";
+    private String cache = "oneCity";
 
-    public List<Stats> getWeatherByCity(String city) throws Exception{
+    public Stats getWeatherByCity(String city) throws Exception{
+        cache=city;
         if (!weatherCacheService.containsCache(cache) || new Date().getTime() - weatherCacheService.getCreationDate(cache).getTime() >= 300000 ) {
             List<Stats> stats = new ArrayList<>();
             try {
@@ -62,14 +63,14 @@ public class WeatherServices  implements WeatherServices1{
 
                 stats.add(new Stats(coord, weather, base, main, visibility, wind, clouds, dt, sunrise, timezone, id, name));
             } catch (Exception e) {
-            throw new Exception(e.getMessage());
+                throw new Exception(e.getMessage());
             }
             if (stats.size() == 0) {
                 throw new Exception("Cases not found");
             }
-        weatherCacheService.updateCacheData(cache, stats);
-    }
-        return weatherCacheService.getCacheByName(cache);
+            weatherCacheService.updateCacheData(cache, stats);
+        }
+        return weatherCacheService.getCacheByName(cache).get(0);
 
     }
 
