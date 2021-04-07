@@ -116,7 +116,7 @@ Este proyecto implementa una arquitectura cliente-servidor, que consiste en un b
     
 ## Enlace heroku
 
-[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://https://parcial-02.herokuapp.com/Wheather.html)
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://https://parcial-02.herokuapp.com:8080/weather.html)
 
 ## Extension 
 Como este proyecto está desarrollado según el principio de inyección de dependencias, es fácil crear extensiones. Podemos incluir varios servicios que implementen interfaces existentes, y utilizando las anotaciones que proporciona springboot, podemos diferenciar fácilmente estos servicios, de la misma manera podemos crear nuevas interfaces que proporcionen nuevos servicios y contribuyan al funcionamiento de la aplicación.
