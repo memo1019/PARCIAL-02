@@ -108,4 +108,16 @@ document.getElementById("demo").innerHTML = "name: " + obj.name + ", age: " + ob
 ```
 
 * Código de página con Mapa embebido [(Ver archivo)](index.html)
+
+##Diseño de la Arquitectura 
+
+Este proyecto implementa una arquitectura cliente-servidor, que consiste en un backend REST, en el que se consume una API externa, diseñada según el principio de inyección de dependencias, con una jerarquía clara para asegurar un acoplamiento profundo. Esta arquitectura también cuenta con un front-end en el que se programa un cliente que consume los servicios proporcionados por la capa controladora del back-end, que también consume una API externa, para conocer los datos que solicita para que el usuario pueda interactuar con él.
+
     
+## Enlace heroku
+
+[![Deployed to Heroku](https://www.herokucdn.com/deploy/button.png)](https://https://parcial-02.herokuapp.com/Wheather.html)
+
+## Extension 
+Como este proyecto está desarrollado según el principio de inyección de dependencias, es fácil crear extensiones. Podemos incluir varios servicios que implementen interfaces existentes, y utilizando las anotaciones que proporciona springboot, podemos diferenciar fácilmente estos servicios, de la misma manera podemos crear nuevas interfaces que proporcionen nuevos servicios y contribuyan al funcionamiento de la aplicación.
+

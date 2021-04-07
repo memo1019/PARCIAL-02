@@ -9,6 +9,7 @@ public class Coord implements Serializable {
         this.lon = lon;
         this.lat = lat;
     }
+    public Coord(){}
 
     public double getLon() {
         return lon;

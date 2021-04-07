@@ -45,17 +45,20 @@ public class WeatherServices  implements WeatherServices1{
                 jsonObject = rta.getJSONObject("wind");
                 Wind wind = mapper.readValue(jsonObject.toString(), Wind.class);
 
+                jsonObject = rta.getJSONObject("sys");
+                Sunrise sunrise = mapper.readValue(jsonObject.toString(), Sunrise.class);
+
+
                 jsonObject = rta.getJSONObject("clouds");
                 int clouds = rta.getJSONObject("clouds").getInt("all");
 
-                jsonObject = rta.getJSONObject("sunrise");
-                Sunrise sunrise = mapper.readValue(jsonObject.toString(), Sunrise.class);
 
                 Long dt = rta.getLong("dt");
                 String base = rta.getString("base");
                 int visibility = rta.getInt("visibility");
                 int timezone = rta.getInt("timezone");
                 String name = rta.getString("name");
+
 
                 stats.add(new Stats(coord, weather, base, main, visibility, wind, clouds, dt, sunrise, timezone, id, name));
             } catch (Exception e) {

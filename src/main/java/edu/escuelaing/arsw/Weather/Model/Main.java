@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class Main implements Serializable {
     private double temp;
+
+
     private double feels_like;
     private double temp_min;
     private double temp_max;
@@ -17,6 +19,9 @@ public class Main implements Serializable {
         this.temp_max=temp_max;
         this.temp_min=temp_min;
     }
+    public Main() {
+    }
+
 
     public double getTemp() {
         return temp;

@@ -28,9 +28,9 @@ app = (function (){
         $("#deg").text("Deg: "+data.sys.id);
         $("#type").text("Type: "+data.wind.speed);
         $("#Sunid").text("Id: "+data.wind.deg);
-        $("#country").text("Country: "+data.sunrise.country);
-        $("#sunrise").text("Sunrise: "+data.sunrise.sunrise);
-        $("#sunset").text("Sunset: "+data.sunrise.sunset);
+        $("#country").text("Country: "+data.sys.country);
+        $("#sunrise").text("Sunrise: "+data.sys.sunrise);
+        $("#sunset").text("Sunset: "+data.sys.sunset);
         document.getElementById("infow").style.visibility="visible";
         _initMap(data)
     }
